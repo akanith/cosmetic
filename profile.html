@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Profile — Glow & Mint</title>
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><a href="index.html">Glow & Mint</a></div>
+    <div class="header-actions"><a href="cart.html">Cart (<span id="cartCount9">0</span>)</a></div>
+  </header>
+
+  <main class="container profile-container">
+    <h1>My Profile</h1>
+    <section class="profile-card">
+      <h2 id="userName">Anitha</h2>
+      <p id="userEmail">anitha@example.com</p>
+      <button id="logoutBtn" class="btn">Logout</button>
+    </section>
+
+    <section class="orders">
+      <h2>Recent Orders</h2>
+      <ul id="orderList">
+        <li>Order #1001 — 2 items — Delivered</li>
+        <li>Order #1010 — 1 item — Processing</li>
+      </ul>
+    </section>
+
+    <section class="addresses">
+      <h2>Saved addresses</h2>
+      <p>No saved addresses yet. Add one at checkout.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">© 2025 Glow & Mint</footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('logoutBtn').addEventListener('click', () => {
+        alert('Logged out (demo).');
+      });
+      updateCartCount();
+    });
+  </script>
+</body>
+</html>

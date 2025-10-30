@@ -1,0 +1,158 @@
+/* ------------------------------
+   Glow & Mint — Profile Page
+   ------------------------------ */
+
+:root {
+  --mint: #a0e7b2;
+  --dark-mint: #4caf75;
+  --text: #333;
+  --light-bg: #f9fafb;
+  --border: #e0e0e0;
+  --white: #fff;
+  --radius: 12px;
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--light-bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Header */
+.site-header {
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--dark-mint);
+}
+
+.header-actions a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.header-actions a:hover {
+  color: var(--dark-mint);
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Profile Card */
+.profile-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  padding: 25px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-card h2 {
+  font-size: 1.5rem;
+  color: var(--dark-mint);
+}
+
+.profile-card p {
+  font-size: 1rem;
+  margin: 10px 0;
+  color: #666;
+}
+
+.btn {
+  background-color: var(--dark-mint);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  padding: 10px 25px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--mint);
+  color: var(--text);
+}
+
+/* Orders Section */
+.orders,
+.addresses {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+.orders h2,
+.addresses h2 {
+  color: var(--dark-mint);
+  margin-bottom: 15px;
+}
+
+#orderList {
+  list-style: none;
+}
+
+#orderList li {
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+#orderList li:last-child {
+  border-bottom: none;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: var(--white);
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .profile-card,
+  .orders,
+  .addresses {
+    padding: 20px;
+  }
+
+  .brand a {
+    font-size: 1.3rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

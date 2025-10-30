@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login — Glow & Mint</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <header class="site-header small">
+    <div class="brand"><a href="index.html">Glow & Mint</a></div>
+  </header>
+
+  <main class="container auth-page">
+    <div class="auth-card">
+      <h1>Sign in to Glow & Mint</h1>
+      <form id="loginForm">
+        <label>Email<input id="loginEmail" type="email" required></label>
+        <label>Password<input id="loginPass" type="password" required></label>
+        <div class="auth-actions">
+          <button class="btn primary" type="submit">Sign in</button>
+          <a href="#" id="showRegister">Create account</a>
+        </div>
+      </form>
+    </div>
+
+    <div class="register-card hidden" id="registerCard">
+      <h2>Create account</h2>
+      <form id="registerForm">
+        <label>Name<input id="regName" type="text" required></label>
+        <label>Email<input id="regEmail" type="email" required></label>
+        <label>Password<input id="regPass" type="password" required></label>
+        <button class="btn primary" type="submit">Register</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">© 2025 Glow & Mint</footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('showRegister').addEventListener('click', (e)=>{
+        e.preventDefault();
+        document.getElementById('registerCard').classList.toggle('hidden');
+      });
+      document.getElementById('loginForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Signed in (demo).');
+        window.location.href = 'profile.html';
+      });
+      document.getElementById('registerForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Account created (demo).');
+        document.getElementById('registerCard').classList.add('hidden');
+      });
+      updateCartCount();
+    });
+  </script>
+</body>
+</html>

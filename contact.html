@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact — Glow & Mint</title>
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+  <header class="site-header small">
+    <div class="brand"><a href="index.html">Glow & Mint</a></div>
+  </header>
+
+  <main class="container contact-page">
+    <h1>Contact Support</h1>
+    <p class="lead">Questions? We’re happy to help.</p>
+
+    <form id="contactForm" class="contact-form">
+      <label>Your name<input type="text" id="cname" required></label>
+      <label>Your email<input type="email" id="cemail" required></label>
+      <label>Message<textarea id="cmessage" required></textarea></label>
+      <button class="btn primary" type="submit">Send message</button>
+    </form>
+
+    <section class="contact-info">
+      <h3>Other ways to reach us</h3>
+      <p>Email: support@glowmint.example</p>
+      <p>Phone: +91 98765 43210</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">© 2025 Glow & Mint</footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('contactForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Message sent — we will reply within 48 hours (demo).');
+        e.target.reset();
+      });
+      updateCartCount();
+    });
+  </script>
+</body>
+</html>

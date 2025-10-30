@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Product Details — Glow & Mint</title>
+  <link rel="stylesheet" href="product-detail.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><a href="index.html">Glow & Mint</a></div>
+    <div class="header-actions"><a href="cart.html">Cart (<span id="cartCount8">0</span>)</a></div>
+  </header>
+
+  <main class="container product-detail-container">
+    <div class="detail-left">
+      <img id="detailImg" src="https://via.placeholder.com/380x380?text=Product" alt="Product image">
+      <div class="thumbs" id="thumbs"></div>
+    </div>
+
+    <div class="detail-right">
+      <h1 id="detailTitle">Product Title</h1>
+      <div class="price-row">
+        <span class="price" id="detailPrice">₹0</span>
+        <span class="rating" id="detailRating">★ 0</span>
+      </div>
+
+      <p id="detailShort">Short description about the product goes here. Lightweight, effective and suitable for daily use.</p>
+
+      <section class="specs">
+        <h3>Specifications</h3>
+        <ul id="specList">
+          <!-- spec items injected by JS -->
+        </ul>
+      </section>
+
+      <div class="buy-actions">
+        <label>Quantity:
+          <input id="qty" type="number" min="1" value="1">
+        </label>
+        <button id="addToCartBtn" class="btn primary">Add to Cart</button>
+        <a href="checkout.html" id="buyNow" class="btn accent">Buy Now</a>
+      </div>
+
+      <section class="details-long">
+        <h3>Details</h3>
+        <p id="longDesc">Long product description — benefits, how to use, ingredients, safety precautions and storage instructions.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">© 2025 Glow & Mint</footer>
+
+  <script src="script.js"></script>
+  <script>
+    // On this page, script reads ?id=PRODUCTID to show details. If none provided, show first product.
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const pid = params.get('id') || (window.appProducts && window.appProducts[0] && window.appProducts[0].id) || 'SK001';
+
+      // Wait a tick for shared appProducts from other pages; otherwise fallback list
+      const fallback = [
+        { id:'SK001', title:'HydraGlow Face Cream', price:899, rating:4.6, img:'https://via.placeholder.com/380?text=HydraGlow', short:'Intense hydration', specs:{Size:'50ml', Skin:'All', 'Cruelty-free':'Yes'}, desc:'Use twice daily. Avoid contact with eyes.' }
+      ];
+
+      const list = window.appProducts || fallback;
+      const product = list.find(p => p.id === pid) || list[0];
+
+      document.getElementById('detailImg').src = product.img || product.image || 'https://via.placeholder.com/380?text=Product';
+      document.getElementById('detailTitle').textContent = product.title || 'Product';
+      document.getElementById('detailPrice').textContent = '₹' + (product.price || 0);
+      document.getElementById('detailRating').textContent = '★ ' + (product.rating || 0);
+      document.getElementById('detailShort').textContent = product.short || 'High quality product.';
+      document.getElementById('longDesc').textContent = product.desc || 'Full product description not available.';
+
+      const specList = document.getElementById('specList');
+      specList.innerHTML = '';
+      const specs = product.specs || product.spec || { Size: '50ml', Brand: 'Glow & Mint' };
+      for (const key in specs) {
+        const li = document.createElement('li');
+        li.innerHTML = `<strong>${key}:</strong> ${specs[key]}`;
+        specList.appendChild(li);
+      }
+
+      document.getElementById('addToCartBtn').addEventListener('click', () => {
+        const qty = parseInt(document.getElementById('qty').value || 1, 10);
+        addToCartWithQty(product, qty);
+      });
+
+      updateCartCount();
+    });
+      function addToCart(item) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existing = cart.find(p => p.title === item.title);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({...item, qty: 1});
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(item.title + " added to cart!");
+    }
+  </script> 
+</body>
+</html>

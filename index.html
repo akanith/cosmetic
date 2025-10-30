@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Glow & Mint — Home</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <a href="#"><span class="logo-dot"></span>Glow &amp; Mint</a>
+    </div>
+    <div class="search-bar">
+      <input id="searchInput" type="search" placeholder="Search products, brands, cosmetics..." />
+      <button id="searchBtn">Search</button>
+    </div>
+    <div class="header-actions">
+      <a href="loginpage.html" class="link">Sign in</a>
+      <a href="cart.html" class="cart-link">Cart (<span id="cartCount">0</span>)</a>
+    </div>
+  </header>
+
+  <section class="hero-banner">
+    <div class="hero-left">
+      <h1>Discover beauty that cares</h1>
+      <p>Shop skincare, makeup, haircare, fragrances and accessories — curated just for you.</p>
+      <a class="btn primary" href="product.html">Shop all categories</a>
+    </div>
+    <div class="hero-right">
+      <img src="image/image.png" alt="Hero banner">
+    </div>
+  </section>
+
+  <section class="product-section">
+    <header class="section-head">
+      <h2>🔥 Hot & Trending Offers</h2>
+    </header>
+
+    <div class="grid">
+      <!-- Skincare -->
+      <div class="product-card">
+        <div class="product-tag hot">Hot Selling</div>
+        <img src="image/facecream.jpg" alt="HydraGlow Face Cream">
+        <h3>HydraGlow Face Cream</h3>
+        <div class="price-row">
+          <span class="price">₹899</span>
+          <span class="old">₹1099</span>
+        </div>
+        <div class="rating">★ 4.6</div>
+        <button class="btn add-btn" onclick="addToCart('HydraGlow Face Cream')">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <div class="product-tag offer">Limited Time Offer</div>
+        <img src="image\images1.jpeg" alt="Vitamin C Brightening Serum">
+        <h3>Vitamin C Brightening Serum</h3>
+        <div class="price-row">
+          <span class="price">₹1299</span>
+          <span class="old">₹1599</span>
+        </div>
+        <div class="rating">★ 4.8</div>
+        <button class="btn add-btn" onclick="addToCart('Vitamin C Brightening Serum')">Add to Cart</button>
+      </div>
+
+      <!-- Makeup -->
+      <div class="product-card">
+        <div class="product-tag best">Best Seller</div>
+        <img src="image/Velvet Matte Lipstick.jpeg" alt="Velvet Matte Lipstick">
+        <h3>Velvet Matte Lipstick - Ruby</h3>
+        <div class="price-row">
+          <span class="price">₹599</span>
+          <span class="old">₹799</span>
+        </div>
+        <div class="rating">★ 4.5</div>
+        <button class="btn add-btn" onclick="addToCart('Velvet Matte Lipstick')">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <div class="product-tag hot">Hot Deal</div>
+        <img src="image/AirTouch Foundation.jpeg" alt="AirTouch Foundation">
+        <h3>AirTouch Foundation</h3>
+        <div class="price-row">
+          <span class="price">₹1050</span>
+          <span class="old">₹1299</span>
+        </div>
+        <div class="rating">★ 4.4</div>
+        <button class="btn add-btn" onclick="addToCart('AirTouch Foundation')">Add to Cart</button>
+      </div>
+
+      <!-- Haircare -->
+      <div class="product-card">
+        <div class="product-tag limited">Limited Stock</div>
+        <img src="image/Keratin Repair Shampoo.jpeg" alt="Keratin Repair Shampoo">
+        <h3>Keratin Repair Shampoo</h3>
+        <div class="price-row">
+          <span class="price">₹699</span>
+          <span class="old">₹899</span>
+        </div>
+        <div class="rating">★ 4.3</div>
+        <button class="btn add-btn" onclick="addToCart('Keratin Repair Shampoo')">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <div class="product-tag new">New Arrival</div>
+        <img src="image/Argan Oil Conditioner.jpeg" alt="Argan Oil Conditioner">
+        <h3>Argan Oil Conditioner</h3>
+        <div class="price-row">
+          <span class="price">₹749</span>
+          <span class="old">₹899</span>
+        </div>
+        <div class="rating">★ 4.5</div>
+        <button class="btn add-btn" onclick="addToCart('Argan Oil Conditioner')">Add to Cart</button>
+      </div>
+
+      <!-- Fragrance -->
+      <div class="product-card">
+        <div class="product-tag love">Most Loved</div>
+        <img src="image/Blossom Eau de Parfum.jpeg" alt="Blossom Eau de Parfum">
+        <h3>Blossom Eau de Parfum</h3>
+        <div class="price-row">
+          <span class="price">₹1299</span>
+          <span class="old">₹1599</span>
+        </div>
+        <div class="rating">★ 4.8</div>
+        <button class="btn add-btn" onclick="addToCart('Blossom Eau de Parfum')">Add to Cart</button>
+      </div>
+
+      <!-- Accessories -->
+      <div class="product-card">
+        <div class="product-tag hot">Hot Pick</div>
+        <img src="image/Luxury Brush Set.jpeg" alt="Luxury Brush Set">
+        <h3>Luxury Brush Set</h3>
+        <div class="price-row">
+          <span class="price">₹899</span>
+          <span class="old">₹999</span>
+        </div>
+        <div class="rating">★ 4.6</div>
+        <button class="btn add-btn" onclick="addToCart('Luxury Brush Set')">Add to Cart</button>
+      </div>
+
+      <!-- Extra items -->
+      <div class="product-card">
+        <div class="product-tag offer">Offer</div>
+        <img src="image/Volume Lash Mascara.jpeg" alt="Volume Lash Mascara">
+        <h3>Volume Lash Mascara</h3>
+        <div class="price-row">
+          <span class="price">₹749</span>
+          <span class="old">₹999</span>
+        </div>
+        <div class="rating">★ 4.1</div>
+        <button class="btn add-btn" onclick="addToCart('Volume Lash Mascara')">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <div class="product-tag limited">Limited Edition</div>
+        <img src="image/Nail Polish Kit.jpeg" alt="Nail Polish Kit">
+        <h3>GlowMint Nail Polish Kit</h3>
+        <div class="price-row">
+          <span class="price">₹499</span>
+          <span class="old">₹699</span>
+        </div>
+        <div class="rating">★ 4.4</div>
+        <button class="btn add-btn" onclick="addToCart('Nail Polish Kit')">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <div class="product-tag new">New Arrival</div>
+        <img src="image/Gentle Foam Face Wash.jpeg" alt="Gentle Foam Face Wash">
+        <h3>Gentle Foam Face Wash</h3>
+        <div class="price-row">
+          <span class="price">₹449</span>
+          <span class="old">₹599</span>
+        </div>
+        <div class="rating">★ 4.2</div>
+        <button class="btn add-btn" onclick="addToCart('Gentle Foam Face Wash')">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <div class="product-tag best">Best Seller</div>
+        <img src="image/Frizz-Free Hair Serum.jpeg" alt="Frizz-Free Hair Serum">
+        <h3>Frizz-Free Hair Serum</h3>
+        <div class="price-row">
+          <span class="price">₹999</span>
+          <span class="old">₹1299</span>
+        </div>
+        <div class="rating">★ 4.7</div>
+        <button class="btn add-btn" onclick="addToCart('Frizz-Free Hair Serum')">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>© 2025 Glow & Mint — Consciously beautiful.</p>
+  </footer>
+
+   <script>
+    function addToCart(item) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existing = cart.find(p => p.title === item.title);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({...item, qty: 1});
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(item.title + " added to cart!");
+    }
+  </script>
+</body>
+</html>

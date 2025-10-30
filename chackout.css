@@ -1,0 +1,178 @@
+/* ============================================
+   CHECKOUT PAGE — Glow & Mint
+   ============================================ */
+
+/* ---------- Base ---------- */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fafafa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  background: linear-gradient(90deg, #ffe3d8, #c8f1dc);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.site-header.small {
+  justify-content: center;
+}
+
+.site-header .brand a {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #00796b;
+  text-decoration: none;
+}
+
+/* ---------- Container ---------- */
+.container.checkout {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+  padding: 40px;
+}
+
+.container.checkout h1 {
+  color: #00796b;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* ---------- Form ---------- */
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+fieldset {
+  border: 2px solid #c8f1dc;
+  border-radius: 12px;
+  padding: 20px 25px;
+  background-color: #fdfdfd;
+}
+
+legend {
+  padding: 0 10px;
+  font-weight: 600;
+  color: #00796b;
+  font-size: 1.1em;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+label input {
+  margin-top: 5px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.95em;
+  transition: all 0.3s ease;
+}
+
+label input:focus {
+  border-color: #00796b;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 121, 107, 0.15);
+}
+
+/* ---------- Buttons ---------- */
+.checkout-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 25px;
+  padding: 10px 25px;
+  font-weight: 600;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background-color: #00796b;
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background-color: #004d40;
+  transform: translateY(-2px);
+}
+
+.btn {
+  background-color: #fafafa;
+  color: #333;
+  border-color: #ccc;
+}
+
+.btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* ---------- Help Section ---------- */
+.order-help {
+  margin-top: 35px;
+  background-color: #fef9f7;
+  border-left: 5px solid #ffab91;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.order-help h3 {
+  color: #e64a19;
+  margin-bottom: 8px;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  text-align: center;
+  padding: 20px 0;
+  background: #ffe3d8;
+  color: #333;
+  margin-top: 50px;
+  font-size: 0.9em;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .container.checkout {
+    padding: 25px 20px;
+  }
+
+  fieldset {
+    padding: 15px 18px;
+  }
+
+  .checkout-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}

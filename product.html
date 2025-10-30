@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Categories — Glow & Mint</title>
+  <link rel="stylesheet" href="product.css">
+</head>
+<body>
+  <header class="site-header small">
+    <div class="brand"><a href="index.html">Glow &amp; Mint</a></div>
+    <div class="header-actions">
+      <a href="cart.html" class="cart-link">Cart (<span id="cartCount2">0</span>)</a>
+    </div>
+  </header>
+
+  <nav class="breadcrumb">
+    <a href="index.html">Home</a> › <span>Categories</span>
+  </nav>
+
+  <main class="container">
+    <h1>Shop by Category</h1>
+    <p class="lead">Explore curated selections across skincare, makeup, haircare, fragrances and accessories.</p>
+
+    <div class="category-cards">
+      <article class="cat-card">
+        <img src="image\Skincare.jpeg" alt="Skincare">
+        <h3><a href="skincare.html">Skincare</a></h3>
+        <p>Moisturizers, serums, face washes and more — for every skin type.</p>
+      </article>
+
+      <article class="cat-card">
+        <img src="image/Makeup.jpeg" alt="Makeup">
+        <h3><a href="makeup.html">Makeup</a></h3>
+        <p>Foundations, lipsticks, mascaras, and color essentials.</p>
+      </article>
+
+      <article class="cat-card">
+        <img src="image/Haircare.jpg" alt="Haircare">
+        <h3><a href="haircare.html">Haircare</a></h3>
+        <p>Shampoos, conditioners and treatments for healthy hair.</p>
+      </article>
+
+      <article class="cat-card">
+        <img src="image/Fragrance.webp" alt="Fragrance">
+        <h3><a href="fragrance.html">Fragrance</a></h3>
+        <p>Signature scents for day and night.</p>
+      </article>
+
+      <article class="cat-card">
+        <img src="image/Accessories.png" alt="Accessories">
+        <h3><a href="accessories.html">Accessories</a></h3>
+        <p>Beauty tools and accessories to complete your routine.</p>
+      </article>
+    </div>
+
+    <section class="info-panel">
+      <h2>How to choose the right products</h2>
+      <ol>
+        <li>Identify your skin/hair type and read product labels.</li>
+        <li>Check ingredient lists for allergens or irritants.</li>
+        <li>Start with travel sizes or testers if unsure.</li>
+        <li>Consult product reviews and dermatologist guidance when needed.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>© 2025 Glow & Mint</div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    function addToCart(item) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existing = cart.find(p => p.title === item.title);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({...item, qty: 1});
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(item.title + " added to cart!");
+    }
+  </script>
+  <script>document.addEventListener('DOMContentLoaded', updateCartCount);</script>
+</body>
+</html>

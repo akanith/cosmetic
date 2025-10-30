@@ -1,0 +1,90 @@
+/* ==============================================
+   FAQ PAGE — Glow & Glam
+   ============================================== */
+
+/* ---------- Color Palette ---------- */
+:root {
+  --mint: #a7e0c1;
+  --rose: #f7bfc5;
+  --charcoal: #333;
+  --ivory: #fffaf9;
+}
+
+/* ---------- Base ---------- */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--ivory);
+  color: var(--charcoal);
+  line-height: 1.6;
+}
+
+/* ---------- Header ---------- */
+header {
+  background: linear-gradient(90deg, var(--rose), var(--mint));
+  padding: 25px 0;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: var(--charcoal);
+  letter-spacing: 1px;
+}
+
+/* ---------- FAQ Section ---------- */
+section {
+  max-width: 800px;
+  margin: 60px auto;
+  background: #fff;
+  border-radius: 14px;
+  padding: 40px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+section h3 {
+  color: var(--rose);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+section p {
+  margin-top: 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ---------- FAQ Hover Card Effect ---------- */
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* ---------- Footer (Optional if you add later) ---------- */
+footer {
+  margin-top: 60px;
+  background: var(--charcoal);
+  color: #eee;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  section {
+    margin: 30px 15px;
+    padding: 25px;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  section h3 {
+    font-size: 1.1rem;
+  }
+}

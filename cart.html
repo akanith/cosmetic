@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Cart — Glow & Mint</title>
+  <link rel="stylesheet" href="cart.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><a href="index.html">✨ Glow & Mint</a></div>
+  </header>
+
+  <main class="container">
+    <h1>Your Shopping Cart</h1>
+
+    <div id="cartItems" class="cart-grid">
+      <!-- 🛍️ Product 1 -->
+      <div class="cart-card">
+        <img src="image/Hyaluronic Acid Serum.avif" alt="Vitamin C Serum">
+        <div class="cart-info">
+          <h3>Vitamin C Glow Serum</h3>
+          <p>₹799</p>
+          <div class="qty-controls">
+            <button onclick="updateQty(0, -1)">−</button>
+            <span id="qty-0">1</span>
+            <button onclick="updateQty(0, 1)">+</button>
+          </div>
+          <button class="remove-btn" onclick="removeItem(0)">Remove</button>
+        </div>
+      </div>
+
+      <!-- 🛍️ Product 2 -->
+      <div class="cart-card">
+        <img src="image/Daily SPF Moisturizer.avif" alt="Hydrating Moisturizer">
+        <div class="cart-info">
+          <h3>Hydrating Aloe Moisturizer</h3>
+          <p>₹599</p>
+          <div class="qty-controls">
+            <button onclick="updateQty(1, -1)">−</button>
+            <span id="qty-1">1</span>
+            <button onclick="updateQty(1, 1)">+</button>
+          </div>
+          <button class="remove-btn" onclick="removeItem(1)">Remove</button>
+        </div>
+      </div>
+
+      <!-- 🛍️ Product 3 -->
+      <div class="cart-card">
+        <img src="image/Green Clay Purifying Mask.webp" alt="Green Tea Cleanser">
+        <div class="cart-info">
+          <h3>Green Tea Face Cleanser</h3>
+          <p>₹499</p>
+          <div class="qty-controls">
+            <button onclick="updateQty(2, -1)">−</button>
+            <span id="qty-2">1</span>
+            <button onclick="updateQty(2, 1)">+</button>
+          </div>
+          <button class="remove-btn" onclick="removeItem(2)">Remove</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ✅ Cart Summary -->
+    <div class="cart-summary" id="cartSummary">
+      <h2>Total: ₹<span id="cartTotal">1897</span></h2>
+      <div class="cart-actions">
+        <button id="clearCartBtn" class="btn-outline">Clear Cart</button>
+        <button id="checkoutBtn" class="btn-primary">Checkout</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">© 2025 Glow & Mint — Consciously beautiful.</footer>
+
+  <!-- 💡 Inline JavaScript -->
+  <script>
+    let products = [
+      { title: "Vitamin C Glow Serum", price: 799, qty: 1 },
+      { title: "Hydrating Aloe Moisturizer", price: 599, qty: 1 },
+      { title: "Green Tea Face Cleanser", price: 499, qty: 1 },
+    ];
+
+    function updateQty(index, change) {
+      const qtyEl = document.getElementById("qty-" + index);
+      products[index].qty += change;
+      if (products[index].qty <= 0) {
+        removeItem(index);
+        return;
+      }
+      qtyEl.textContent = products[index].qty;
+      updateTotal();
+    }
+
+    function removeItem(index) {
+      products.splice(index, 1);
+      document.querySelectorAll(".cart-card")[index].remove();
+      updateTotal();
+    }
+
+    function updateTotal() {
+      let total = products.reduce((sum, p) => sum + p.price * p.qty, 0);
+      document.getElementById("cartTotal").textContent = total;
+    }
+
+    document.getElementById("clearCartBtn").addEventListener("click", () => {
+      products = [];
+      document.getElementById("cartItems").innerHTML = "";
+      document.getElementById("cartTotal").textContent = "0";
+    });
+
+    // ✅ Redirect to checkout page
+    document.getElementById("checkoutBtn").addEventListener("click", () => {
+      // You can replace this URL with your own checkout page
+      window.location.href = "checkout.html";
+    });
+  </script>
+</body>
+</html>
+ 

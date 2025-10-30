@@ -1,0 +1,129 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  background-color: #f8fefb;
+  color: #333;
+}
+
+.site-header {
+  background-color: #b2f2bb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.site-header .brand a {
+  text-decoration: none;
+  color: #0b6b2d;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.header-actions a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.breadcrumb {
+  padding: 10px 30px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: #0b6b2d;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.lead {
+  color: #555;
+  font-size: 1.1em;
+  margin-bottom: 25px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+}
+
+.product-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.product-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  font-size: 1.1em;
+  color: #0b6b2d;
+  margin: 10px 0 5px;
+}
+
+.product-card p {
+  font-size: 0.9em;
+  color: #666;
+  margin: 5px 15px;
+}
+
+.product-card .price {
+  font-weight: bold;
+  color: #000;
+  margin: 8px 0 12px;
+}
+
+.product-card button {
+  background-color: #0b6b2d;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 15px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.product-card button:hover {
+  background-color: #128a3d;
+}
+
+.how-to {
+  margin-top: 50px;
+  background-color: #e9f9ee;
+  border-left: 4px solid #0b6b2d;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.how-to h2 {
+  color: #0b6b2d;
+  margin-bottom: 10px;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #b2f2bb;
+  color: #333;
+  margin-top: 50px;
+}

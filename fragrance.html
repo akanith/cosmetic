@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fragrance — Glow & Mint</title>
+  <link rel="stylesheet" href="fragrance.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><a href="index.html">Glow & Mint</a></div>
+    <div class="header-actions">
+      <a href="cart.html">Cart (<span id="cartCount6">0</span>)</a>
+    </div>
+  </header>
+
+  <nav class="breadcrumb">
+    <a href="index.html">Home</a> › <a href="product.html">Categories</a> › <span>Fragrance</span>
+  </nav>
+
+  <main class="container">
+    <h1>Fragrance Collection</h1>
+    <p class="lead">Discover your signature scent — from floral to woody and everything in between.</p>
+
+    <div class="grid">
+      <div class="card">
+        <img src="image/Blossom Eau de Parfum.jpeg" alt="Blossom Eau de Parfum">
+        <h3>Blossom Eau de Parfum</h3>
+        <p>Floral and warm — perfect for any season.</p>
+        <span class="price">₹1299</span>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="card">
+        <img src="image/Citrus Daily Mist.jpeg" alt="Citrus Daily Mist">
+        <h3>Citrus Daily Mist</h3>
+        <p>Fresh, light and uplifting everyday scent.</p>
+        <span class="price">₹699</span>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="card">
+        <img src="image/Amber Nights.webp" alt="Amber Nights">
+        <h3>Amber Nights</h3>
+        <p>Rich woody aroma with amber base notes.</p>
+        <span class="price">₹1699</span>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="card">
+        <img src="image/Ocean Breeze Cologne.jpeg" alt="Ocean Breeze Cologne">
+        <h3>Ocean Breeze Cologne</h3>
+        <p>Cool aquatic notes inspired by sea air.</p>
+        <span class="price">₹899</span>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="card">
+        <img src="image/Vanilla Whisper.jpeg" alt="Vanilla Whisper">
+        <h3>Vanilla Whisper</h3>
+        <p>Soft vanilla touch with a hint of musk.</p>
+        <span class="price">₹1099</span>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="card">
+        <img src="image/Wild Rose Essence.jpg" alt="Wild Rose Essence">
+        <h3>Wild Rose Essence</h3>
+        <p>Romantic floral fragrance for everyday wear.</p>
+        <span class="price">₹999</span>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="card">
+        <img src="image/Woody Oud Intense.jpeg" alt="Woody Oud Intense">
+        <h3>Woody Oud Intense</h3>
+        <p>Deep oriental scent for bold personalities.</p>
+        <span class="price">₹1799</span>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=500" alt="Peach Blossom Mist">
+        <h3>Peach Blossom Mist</h3>
+        <p>Fruity and youthful — ideal for summer.</p>
+        <span class="price">₹749</span>
+        <button>Add to Cart</button>
+      </div>
+
+      
+    </div>
+
+    <section class="fragrance-guide">
+      <h2>How to choose a scent</h2>
+      <p>Consider concentration (EDT vs EDP), fragrance notes, and the time of day or occasion when selecting your perfume.</p>
+    </section>
+  </main> 
+  <script>
+    function addToCart(item) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existing = cart.find(p => p.title === item.title);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({...item, qty: 1});
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(item.title + " added to cart!");
+    }
+  </script>
+
+  <footer class="site-footer">© 2025 Glow & Mint</footer>
+</body>
+</html>
